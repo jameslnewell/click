@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <button>Click me!</button>
+    <script src="build/build.js"></script>
+    <script>
+
+        var el = document.querySelector('button');
+        el.addEventListener('click', function() {
+           console.log('clicked', this);
+        });
+
+        var click = require('click');
+        click(el);
+
+    </script>
+</body>
+</html>
