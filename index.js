@@ -1,3 +1,13 @@
 module.exports = function(el) {
-  el.dispatchEvent(new MouseEvent('click'));
+  var event;
+
+  try {
+    event = new MouseEvent('click');
+  } catch (err) {
+    event = document.createEvent('MouseEvent');
+    event.initMouseEvent('click');
+  }
+
+  el.dispatchEvent(event);
+
 };
